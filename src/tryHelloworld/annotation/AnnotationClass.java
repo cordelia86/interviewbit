@@ -10,10 +10,11 @@ import java.util.RandomAccess;
  * @since 2017. 5. 31.
  */
 
-public class AnnotationClass implements RandomAccess{
+public class AnnotationClass implements RandomAccess {
 	int count = 0;
+
 	@Count100
-	public void hello(){
+	public void hello() {
 		System.out.println("Hello " + ++count);
 	}
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * tryHelloworld.algorithm
- * ㄴ .java
+ * ㄴ GCDLCM.java
  *
  * @author Boram Lee(1100230)
  * @since 2017. 6. 8.

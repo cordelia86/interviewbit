@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * tryHelloworld.algorithm
- * ㄴ .java
+ * ㄴ Fibonacci.java
  *
  * @author Boram Lee(1100230)
  * @since 2017. 6. 7.
