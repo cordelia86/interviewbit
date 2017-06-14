@@ -100,18 +100,18 @@ public class Anagram {
 
 		char[] splicedStringA;
 		char[] splicedStringB;
-		int[] alphabetPositionA = new int[28];
-		int[] alphabetPositionB = new int[28];
+		int[] alphabetPositionA = new int[26];
+		int[] alphabetPositionB = new int[26];
 
 
 		splicedStringA = a.replaceAll(" ","").toLowerCase().toCharArray();
 		splicedStringB = b.replaceAll(" ","").toLowerCase().toCharArray();
 		for (int j = 0; j < splicedStringA.length; j++) {
-			++alphabetPositionA[(int)splicedStringA[j] - 97];
+			alphabetPositionA[(int)splicedStringA[j] - 97]++;
 		}
 
 		for (int j = 0; j < splicedStringB.length; j++) {
-			++alphabetPositionB[(int)splicedStringB[j] - 97];
+			alphabetPositionB[(int)splicedStringB[j] - 97]++;
 		}
 
 		if(Arrays.equals(alphabetPositionA,alphabetPositionB)){

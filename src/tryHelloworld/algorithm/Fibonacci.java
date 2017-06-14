@@ -13,6 +13,14 @@ import java.util.Map;
 public class Fibonacci {
 
 	// O(2^n)
+
+	/**
+	 * 피보나치 수열
+	 * 1, 1, 2, 3, 5, 8, 13 ..... -> f(n) = f(n-1) + f(n-2)
+	 *
+	 * @param number
+	 * @return
+	 */
 	private int fibonacciRecursive(int number) {
 		if (number <= 0) {
 			return 0;
@@ -40,12 +48,14 @@ public class Fibonacci {
 
 	}
 
-	private int fibonacciMemory(int number, Map<Integer, Integer> memo) {
+	private static Map<Integer,Long> memo = new HashMap<>();
+	static {
+		memo.put(0,0L); //fibonacci(0)
+		memo.put(1,1L); //fibonacci(1)
+	}
 
-		if (memo.containsKey(number)) return memo.get(number);
-		if (number <= 2) return 1;
-
-		return memo.put(number, fibonacciMemory(number - 1, memo) + fibonacciMemory(number - 2, memo));
+	private long fibonacciMemory(int x) {
+		return memo.computeIfAbsent(x, n -> fibonacciMemory(n-1) + fibonacciMemory(n-2));
 	}
 
 
@@ -69,8 +79,8 @@ public class Fibonacci {
 		System.out.println("------------------------------------------");
 
 		long startMemory = System.currentTimeMillis();
-		Map<Integer, Integer> cache = new HashMap<>();
-		System.out.println(fibonacci.fibonacciMemory(inputNumber, cache));
+
+		System.out.println(fibonacci.fibonacciMemory(inputNumber));
 		long endMemory = System.currentTimeMillis();
 		System.out.println("Memory : " + (endMemory - startMemory));
 	}
